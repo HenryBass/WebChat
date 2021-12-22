@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "server": "deploy/us-central1-b",
+    "last-modified": "Tue, 27 Oct 2020 15:01:25 GMT",
+    "x-amz-version-id": "8ca2zy1CTqR2hx6yu6f2fiHhWlyQBrsP",
+    "access-control-allow-origin": "*",
+    "content-length": "11108",
+    "cache-control": "public, max-age=31536000, immutable",
+    "etag": "\"a0eb9a7b1b3c6d0272bea6096c60593b\"",
+    "x-amz-request-id": "V80CDJYHB1EX9JAK",
+    "content-type": "application/typescript; charset=utf-8",
+    "date": "Sat, 18 Dec 2021 18:29:47 GMT",
+    "x-amz-id-2": "baBLLlOtPl4qqfgemvJZ3s1c55M53VrmsYSx0g/HBLfgIzNqraIS2B/T3AxunEVwBAyrZw3pYdg="
+  },
+  "url": "https://deno.land/std@0.75.0/hash/sha1.ts"
+}

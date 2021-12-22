@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-amz-request-id": "169GD1VH2J43XV5T",
+    "x-amz-version-id": "NLcGB5wU65kPZLKKM9yb6z29LMD.nF2v",
+    "x-amz-id-2": "0DV9U75Y5rL/04v2eq/ace/zb60jptBn3vX0XVDitn36yT2nw0jlszYIFuhkaRXAS/5UvNeUyXI=",
+    "access-control-allow-origin": "*",
+    "etag": "\"98d523cb926476c3aa172c47c81a4041\"",
+    "server": "deploy/us-central1-b",
+    "last-modified": "Tue, 27 Oct 2020 15:01:24 GMT",
+    "date": "Sat, 18 Dec 2021 17:57:52 GMT",
+    "content-length": "2032",
+    "cache-control": "public, max-age=31536000, immutable",
+    "content-type": "application/typescript; charset=utf-8"
+  },
+  "url": "https://deno.land/std@0.75.0/async/mux_async_iterator.ts"
+}

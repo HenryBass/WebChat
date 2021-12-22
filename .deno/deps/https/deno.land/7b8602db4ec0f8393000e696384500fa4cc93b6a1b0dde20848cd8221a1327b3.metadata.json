@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-amz-id-2": "G5pRX80nEE+LcPYlsixY7aIcCXKxVMHR2/r/MeF5v5OMk3RadOBTtBoR/qBlYsjm0OFqNTPXBHY=",
+    "x-amz-request-id": "169RHQYCC1CPTFPK",
+    "access-control-allow-origin": "*",
+    "x-amz-version-id": "o6ovak4E_tgxpn.ocwfEYhODxkjA1sb7",
+    "date": "Sat, 18 Dec 2021 17:57:52 GMT",
+    "last-modified": "Tue, 27 Oct 2020 15:01:26 GMT",
+    "cache-control": "public, max-age=31536000, immutable",
+    "etag": "\"f0e247f2b2ff8c9a81af75e8d4a4fbff\"",
+    "content-type": "application/typescript; charset=utf-8",
+    "server": "deploy/us-central1-b",
+    "content-length": "4701"
+  },
+  "url": "https://deno.land/std@0.75.0/textproto/mod.ts"
+}
