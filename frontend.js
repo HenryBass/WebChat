@@ -30,11 +30,16 @@ document.addEventListener("DOMContentLoaded", _ => {
 
     }
 
+    ws.onclose = function (event) {
+      document.getElementById("messageLog").insertAdjacentHTML(
+        'beforeend',
+        `<p class=msg><b>${gettime()} ~ henrybot</b>: The server is down. Reload in a bit to reconnect.</p>`
+        )
+    };
+
     ws.onmessage = function (event) {
         const msg = JSON.parse(event.data)
-          addMessages(msg.data)
-        
-
+        addMessages(msg.data)
     };
 
     document.getElementById("send").addEventListener("click", sendMessage)
@@ -55,7 +60,6 @@ document.addEventListener("DOMContentLoaded", _ => {
           elem.scrollTop = elem.scrollHeight;
         }
         if (message.users != 'undefined') {
-          console.log("newmsg" + message.users)
           document.getElementById("users").innerHTML = message.users + " Online"
         }
     }

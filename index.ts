@@ -40,6 +40,9 @@ for await (const req of server) {
             } else if (req.url === "/frontend.js") {
                 headers.set("Content-Type", "text/javascript")
                 data = await Deno.readTextFile("frontend.js")
+            } else if (req.url === "/discord.css") {
+                headers.set("Content-Type", "text/css")
+                data = await Deno.readTextFile("discord.css")
             } else {
                 throw 404
             }
@@ -84,7 +87,7 @@ async function handleWs(socket: WebSocket) {
                     type: "message",
                     data: {
                         name: "henrybot",
-                        message: "Hey, welcome to henrychat! There are " + users.length + " users online rn",
+                        message: "Hey, welcome to henrychat! There are " + users.length + " users online rn &#129472;",
                         users: users.length
 
                     }
