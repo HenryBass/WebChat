@@ -1,6 +1,6 @@
 :root {
-  --color: rgb(0, 255, 0);
-  --dark: rgb(0, 50, 0);
+  --color: rgb(50, 50, 50);
+  --dark: rgb(50, 50, 50);
 }
 
 * {
@@ -9,9 +9,10 @@
     padding: 4px;
     margin: 0px;
     border: 0px;
-    color: var(--color);
-    background-color: black;
+    color: white;
+    background-color: rgb(75, 75, 75);
     font-size: 16px;
+
 }
 
 b {
@@ -22,7 +23,7 @@ body,
 html {
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: rgb(75, 75, 75);
     overflow: hidden;
 }
 
@@ -43,18 +44,17 @@ html {
     bottom: 0;
 }
 
-#name {
-    height: 100%;
-    width: 100%;
-    border: 1px solid var(--color);
-    text-align: center;
-
-}
-
 #channel {
     height: 100%;
     width: 100%;
-    border: 1px solid var(--color);
+    background-color: var(--color);
+    text-align: center;
+}
+
+#name {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color);
     text-align: center;
 
 }
@@ -63,7 +63,7 @@ html {
     height: 100%;
     width: 100%;
     text-align: center;
-    border: 1px solid var(--color);
+    background-color: var(--color);
     padding-bottom: 10px;
     padding-top: 10px;
 
@@ -72,7 +72,7 @@ html {
 #send {
     height: 100%;
     width: 100%;
-    border: 1px solid var(--color);
+    background-color: var(--color);
 }
 
 
@@ -86,35 +86,39 @@ html {
 }
 
 #info {
-  border: 1px solid var(--color);
+  animation: darken 2s forwards;
   display:flex;
   margin-right: 10px;
 }
 
 #motd {
-  border: 1px solid var(--color);
-  display:flex;
-  margin-right: 10px;
-}
-
-#changetheme {
-  border: 1px solid var(--color);
+  animation: darken 2s forwards;
   display:flex;
   margin-right: 10px;
 }
 
 .msg:hover > * {
-  background: var(--dark);
+  animation: darken 0.5s forwards;
 }
 
 .msg:hover {
-  background: var(--dark);
+  animation: shadow 0.5s forwards;
 }
 
 #options:hover {
-  background: var(--dark);
+  animation: shadow 0.5s forwards;
 }
 
 #options {
-  border: 1px solid var(--color);
+  animation: darken 2s forwards;
+}
+
+@keyframes shadow {
+  from {}
+  to {background: var(--dark);filter: drop-shadow(0 2px 3px black);}
+}
+
+@keyframes darken {
+  from {}
+  to {background: var(--dark);}
 }

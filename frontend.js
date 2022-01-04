@@ -1,5 +1,9 @@
 let ws
 
+var themes = ["modern.css", "style.css"]
+
+var theme = 1
+
 function gettime() {
   var date = new Date();
   var hours = date.getHours();
@@ -50,7 +54,7 @@ document.addEventListener("DOMContentLoaded", _ => {
     })
 
     function addMessages(message) {
-        if (message.name != 'undefined') {
+        if (message.name != 'undefined' && ((message.channel == document.getElementById("channel").value)) || message.channel == "any") {
 
           document.getElementById("messageLog").insertAdjacentHTML(
               'beforeend',
@@ -75,7 +79,8 @@ document.addEventListener("DOMContentLoaded", _ => {
                 data: {
                     name: name.value,
                     message: message.value,
-                    users: "undefined"
+                    users: "undefined",
+                    channel: document.getElementById("channel").value
                 }
             }))
             message.value = ""
@@ -101,4 +106,22 @@ function changetheme() {
   var r = document.querySelector(':root');
   r.style.setProperty('--color', 'red');
   console.log("Theme Changed!")
+}
+
+function changetheme() {
+
+    var oldlink = document.getElementsByTagName("link").item(0);
+
+    var newlink = document.createElement("link");
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", themes[theme]);
+    
+    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+
+    if (theme < (themes.length - 1)) {
+      theme++
+    } else{
+      theme = 0
+    }
 }
