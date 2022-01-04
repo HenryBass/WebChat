@@ -34,16 +34,28 @@ for await (const req of server) {
             if (req.url === "/" || req.url === "/index.html") {
                 headers.set("Content-Type", "text/html")
                 data = await Deno.readTextFile("index.html")
-            } else if (req.url === "/style.css") {
+            }
+            else if (req.url === "/style.css") {
                 headers.set("Content-Type", "text/css")
                 data = await Deno.readTextFile("style.css")
-            } else if (req.url === "/frontend.js") {
+            }
+            else if (req.url === "/frontend.js") {
                 headers.set("Content-Type", "text/javascript")
                 data = await Deno.readTextFile("frontend.js")
-            } else if (req.url === "/modern.css") {
+            }
+            else if (req.url === "/modern.css") {
                 headers.set("Content-Type", "text/css")
                 data = await Deno.readTextFile("modern.css")
-            } else {
+            }
+            else if (req.url === "/retrored.css") {
+                headers.set("Content-Type", "text/css")
+                data = await Deno.readTextFile("retrored.css")
+            }
+            else if (req.url === "/retroblue.css") {
+                headers.set("Content-Type", "text/css")
+                data = await Deno.readTextFile("retroblue.css")
+            }
+            else {
                 throw 404
             }
 

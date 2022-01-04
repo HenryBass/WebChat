@@ -1,6 +1,6 @@
 :root {
-  --color: rgb(0, 255, 0);
-  --dark: rgb(0, 50, 0);
+  --color: rgb(255, 0, 0);
+  --dark: rgb(50, 0, 0);
 }
 
 * {
