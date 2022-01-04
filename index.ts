@@ -51,9 +51,9 @@ for await (const req of server) {
                 headers.set("Content-Type", "text/css")
                 data = await Deno.readTextFile("retrored.css")
             }
-            else if (req.url === "/retroblue.css") {
+            else if (req.url === "/retropurple.css") {
                 headers.set("Content-Type", "text/css")
-                data = await Deno.readTextFile("retroblue.css")
+                data = await Deno.readTextFile("retropurple.css")
             }
             else {
                 throw 404

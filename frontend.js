@@ -1,6 +1,6 @@
 let ws
 
-var themes = ["modern.css", "style.css", "retrored.css", "retroblue.css"]
+var themes = ["modern.css", "style.css", "retrored.css", "retropurple.css"]
 
 var theme = 1
 
