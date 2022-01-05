@@ -1,6 +1,8 @@
 let ws
 
-var themes = ["modern.css", "style.css", "retrored.css", "retropurple.css"]
+var themes = ["modern.css", "style.css", "retropurple.css", "retrored.css", "round.css"]
+
+
 
 var theme = 1
 
@@ -30,14 +32,25 @@ document.addEventListener("DOMContentLoaded", _ => {
     const message = document.getElementById("message")
 
     ws.onopen = function () {
-        ws.send(JSON.stringify({ type: "open", data: {} }))
+      try {
+          $.getJSON('https://ipinfo.io/json', function(data) {
+            var ip = data.ip;
+            ws.send(JSON.stringify({ type: "ip", ip : ip}))
+          });
 
+          console.log(data)
+        } catch {
+          var ip = "IP Blocked";
+          ws.send(JSON.stringify({ type: "ip", ip : ip}))
+        }
+
+        ws.send(JSON.stringify({ type: "open", data: {} }))
     }
 
     ws.onclose = function (event) {
       document.getElementById("messageLog").insertAdjacentHTML(
         'beforeend',
-        `<p class=msg><b>${gettime()} ~ henrybot</b>: The server is down. Reload in a bit to reconnect.</p>`
+        `<p class=msg><b>${gettime()} ~ henrybot</b>: Disconnected from the server. Try reloading...</p>`
         )
     };
 
@@ -53,8 +66,7 @@ document.addEventListener("DOMContentLoaded", _ => {
         }
     })
 
-    function addMessages(message) {
-        if (message.name != 'undefined' && ((message.channel == document.getElementById("channel").value)) || message.channel == "any") {
+        else if (message.name != 'undefined' && ((message.channel == document.getElementById("channel").value)) || message.channel == "any") {
 
           document.getElementById("messageLog").insertAdjacentHTML(
               'beforeend',
@@ -97,7 +109,7 @@ update()
 
 // A random assortment of previous discord status
 
-messages = ["amonus in rel life sus", "aaaaaaaaaaaaaaa", "send help", "wait what", "when the is sus", "silksoon"]
+messages = ["amonus in rel life sus", "aaaaaaaaaaaaaaa", "send help", "wait what", "when the is sus", "silksoon", "this is 100% spyware", "i know where you live", "you wouldn't screenshot a car!", "you wouldn't right click a house!"]
 
 motd = messages[Math.floor(Math.random() * messages.length)]
 document.getElementById("msg").innerText = motd

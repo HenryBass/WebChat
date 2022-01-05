@@ -1,18 +1,18 @@
 :root {
-  --color: rgb(50, 50, 50);
-  --dark: rgb(50, 50, 50);
+  --color: rgb(0, 200, 255);
+  --dark: rgb(0, 100, 150);
 }
 
 * {
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 4px;
     margin: 0px;
     border: 0px;
-    color: white;
-    background-color: rgb(75, 75, 75);
+    color: var(--color);
+    background-color: white;
     font-size: 16px;
-
+    border-radius: 8px;
 }
 
 b {
@@ -23,7 +23,7 @@ body,
 html {
     width: 100%;
     height: 100%;
-    background-color: rgb(75, 75, 75);
+    background-color: white;
     overflow: hidden;
 }
 
@@ -44,35 +44,45 @@ html {
     bottom: 0;
 }
 
-#channel {
-    height: 100%;
-    width: 100%;
-    background-color: var(--color);
-    text-align: center;
-}
-
 #name {
     height: 100%;
     width: 100%;
-    background-color: var(--color);
+    border: 1px solid var(--color);
     text-align: center;
+    
 
+
+}
+
+#channel {
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--color);
+    text-align: center;
+    
+
+}
+
+#theme {
+  border-radius: 4px;
 }
 
 #message {
     height: 100%;
     width: 100%;
     text-align: center;
-    background-color: var(--color);
+    border: 1px solid var(--color);
     padding-bottom: 10px;
     padding-top: 10px;
+    
 
 }
 
 #send {
     height: 100%;
     width: 100%;
-    background-color: var(--color);
+    border: 1px solid var(--color);
+    
 }
 
 
@@ -86,39 +96,39 @@ html {
 }
 
 #info {
-  animation: darken 2s forwards;
+  border: 1px solid var(--color);
   display:flex;
   margin-right: 10px;
+  
 }
 
 #motd {
-  animation: darken 2s forwards;
+  border: 1px solid var(--color);
   display:flex;
   margin-right: 10px;
+  
+}
+
+#changetheme {
+  border: 1px solid var(--color);
+  display:flex;
+  margin-right: 10px;
+  
 }
 
 .msg:hover > * {
-  animation: darken 0.5s forwards;
+  background: var(--dark);
 }
 
+
 .msg:hover {
-  animation: shadow 0.5s forwards;
+  background: var(--dark);
 }
 
 #options:hover {
-  animation: shadow 0.5s forwards;
+  background: var(--dark);
 }
 
 #options {
-  animation: darken 2s forwards;
-}
-
-@keyframes shadow {
-  from {}
-  to {background: var(--dark);filter: drop-shadow(0 2px 3px black);}
-}
-
-@keyframes darken {
-  from {}
-  to {background: var(--dark);}
+  border: 1px solid var(--color);
 }

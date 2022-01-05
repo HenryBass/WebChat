@@ -35,7 +35,7 @@ html {
 }
 
 #controls {
-    width: 100%;
+    width: 99%;
     position:absolute;
     display: grid;
     grid-template-columns: 1fr 1fr 3fr 1fr;

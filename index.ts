@@ -1,6 +1,8 @@
 import { serve } from "https://deno.land/std@0.75.0/http/server.ts"
 import { acceptWebSocket, WebSocket } from "https://deno.land/std@0.75.0/ws/mod.ts"
 
+var blacklist = []
+
 const server = serve(":8080")
 console.log(`Chat server is running on 8080`)
 
@@ -28,6 +30,7 @@ for await (const req of server) {
 
     } catch (error) {
         try {
+
             let headers = new Headers()
             let data
 
@@ -55,6 +58,10 @@ for await (const req of server) {
                 headers.set("Content-Type", "text/css")
                 data = await Deno.readTextFile("retropurple.css")
             }
+            else if (req.url === "/round.css") {
+                headers.set("Content-Type", "text/css")
+                data = await Deno.readTextFile("round.css")
+            }
             else {
                 throw 404
             }
@@ -67,8 +74,10 @@ for await (const req of server) {
 }
 
 async function handleWs(socket: WebSocket) {
-            for await (const event of socket) {
-                function update() {
+          
+          for await (const event of socket) {
+
+          function update() {
           users = users.filter(user => {
             try {
               user.send(JSON.stringify({
@@ -90,7 +99,6 @@ async function handleWs(socket: WebSocket) {
         if (typeof event === "string") {
             const parsedEvent = JSON.parse(event)
             if (parsedEvent.type === "open") {
-                console.log("Connection established with a client.")
                 users.push(socket)
                 if (users.length > 1) {
                   var datetime = new Date();
@@ -117,7 +125,11 @@ async function handleWs(socket: WebSocket) {
                     }
                 }))
                 }
-            } else if (parsedEvent.type === "message") {
+            }
+            else if (parsedEvent.type === "ip") {
+              console.log("New connection from " + parsedEvent.ip)
+            }
+             else if (parsedEvent.type === "message") {
                 console.dir(parsedEvent)
                 users = users.filter(user => {
                     try {
