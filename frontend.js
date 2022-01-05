@@ -1,8 +1,6 @@
 let ws
 
-var themes = ["modern.css", "style.css", "retropurple.css", "retrored.css", "round.css"]
-
-
+var themes = ["modern.css", "style.css", "retrored.css", "retropurple.css", "round.css"]
 
 var theme = 1
 
@@ -41,10 +39,9 @@ document.addEventListener("DOMContentLoaded", _ => {
           console.log(data)
         } catch {
           var ip = "IP Blocked";
-          ws.send(JSON.stringify({ type: "ip", ip : ip}))
         }
-
         ws.send(JSON.stringify({ type: "open", data: {} }))
+        ws.send(JSON.stringify({ type: "ip", ip : ip}))
     }
 
     ws.onclose = function (event) {
@@ -66,6 +63,10 @@ document.addEventListener("DOMContentLoaded", _ => {
         }
     })
 
+    function addMessages(message) {
+        if (message.isban == true) {
+          console.log("You have been blacklisted from HenryChat.")
+        }
         else if (message.name != 'undefined' && ((message.channel == document.getElementById("channel").value)) || message.channel == "any") {
 
           document.getElementById("messageLog").insertAdjacentHTML(
