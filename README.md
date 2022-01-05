@@ -1,6 +1,6 @@
 # WebChat
 A Webchat with sockets!
 
-also anon and stuff
+Multible channels, and themes!
 
-one of the bigger projects i've done
+# https://chat.henrybass.repl.co/
